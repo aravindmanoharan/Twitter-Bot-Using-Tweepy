@@ -13,7 +13,7 @@ CONSUMER_KEY_SECRET = "consumer key secrets"
 ACCESS_TOKEN = "access token"
 ACCESS_TOKEN_SECRET = "access token secret"
 
-# The screen name of the account whose tweets we are intended to scrap.
+# The screen name of the account whose tweets we are intended to collect.
 
 userName = '@BarackObama'
 hashtags = []
@@ -34,7 +34,7 @@ auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 authAPI = API(auth)
 user = authAPI.get_user(userName)
 
-# We create a loop continously to scrap data as much as we need i.e., here we are scraping till the endDate.
+# We create a loop continously to collect data as much as we need i.e., here we are collecting till the endDate.
 
 for status in Cursor(authAPI.user_timeline, id = userName, tweet_mode = 'extended').items():
     # Here status is a form of dictionary which has several parameters for each tweets.
@@ -46,10 +46,10 @@ for status in Cursor(authAPI.user_timeline, id = userName, tweet_mode = 'extende
         allTweets.append(status.full_text)
     tweetCount += 1
     
-    # We are also scraping the hashtags and the mentioned accounts in each tweets.
+    # We are also collecting the hashtags and the mentioned accounts in each tweets.
     
     if hasattr(status, "entities"):
-        # If the tweet is been retweeted then we scrap the hashtags and the mentioned accounts from the source of the tweet.
+        # If the tweet is been retweeted then we collect the hashtags and the mentioned accounts from the source of the tweet.
         # All the hashtags and mentioned accoutns are stored in two list, hashtagsRT and mentionsRT respectively.
         # If the tweet doesn't have either hashtags or any mentioned accounts, then an empty string is stored to that respective variables.
 
@@ -78,7 +78,7 @@ for status in Cursor(authAPI.user_timeline, id = userName, tweet_mode = 'extende
             hashtagsRT.append(temp)
             mentionsRT.append(temp)
         
-        # If the content is tweeted from the user account, then we scrap the hashtags and the mentioned accounts from the user account itself.
+        # If the content is tweeted from the user account, then we collect the hashtags and the mentioned accounts from the user account itself.
         # All the hashtags and mentioned accoutns are stored in two list, hashtags and mentions respectively.
         # If a tweet doesn't have either hashtags or any mentioned accounts, then an empty string is stored to that respective variables.
         
