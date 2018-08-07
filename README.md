@@ -46,3 +46,17 @@ print (user.name)
 ```
 
 This should return the name of your Twitter account in the console.
+
+## Buildind the Bot
+
+This Bot is meant to:
+
+1. Collect tweets of any Twitter User (Provided you mention their screen name in the Python script).
+2. Collect hashtags and tagged accoutns for each tweets.
+3. Collect User data such as User's total tweets, average tweets per day, etc.
+
+Tweepy has a lot many features, it's just a matter of how much we explore it.
+
+## Have questions? Need help with the bot?
+
+If you're having issues with or have questions about the bot, [file an issue](https://github.com/aravindmanoharan/Twitter-Bot-Using-Tweepy/issues) in this repository so that I can get back to you soon.
