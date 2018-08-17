@@ -47,7 +47,7 @@ print (user.name)
 
 This should return the name of your Twitter account in the console.
 
-## Buildind the Bot
+## Twitter Bot
 
 This Bot is meant to:
 
